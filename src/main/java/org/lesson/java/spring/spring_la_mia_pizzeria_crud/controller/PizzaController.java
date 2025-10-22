@@ -110,7 +110,7 @@ public class PizzaController {
         offer.setPizza(repo.findById(id).get());
         model.addAttribute("offer" , offer);
 
-        return "/offers/create";
+        return "/offers/create-or-edit";
     }
 
 

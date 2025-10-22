@@ -16,10 +16,10 @@
        
         <div class="container">
 
-            <h1>Create new offer for [[${offer.pizza.id}]]</h1>
+            <h1 th:text="${edit} ? |Editig offer ${offer.id} for pizza ${offer.pizza.name}| : |Creating new offer for pizza ${offer.pizza.name}|   "></h1>
             <div class="row">
                 <div class="col-12" >
-                    <form id="offer-form" th:object="${offer}" th:action="@{/offers/create}" method="post">
+                    <form id="offer-form" th:object="${offer}" th:action="${edit} ? @{/offers/edit/{id}(id = ${offer.id})} : @{/offers/create}" method="post">
 
                         <input type="hidden" th:field="*{pizza}" id="linked-pizza">
 
