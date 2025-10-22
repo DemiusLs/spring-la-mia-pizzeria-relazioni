@@ -56,6 +56,7 @@
                     <td th:text="*{description}"></td>
                     <td th:text="*{url}"></td>
                     <td th:text="*{price}"></td>
+                    <td> <a th:href="@{/pizzas/offers/{id}(id= *{id})}" class="btn btn-info">New offer</a></td> 
                     <td> <a th:href="@{/pizzas/{id}(id= *{id})}" class="btn btn-primary">Dettagli</a></td> 
                     <td> <a th:href="@{/pizzas/edit/{id}(id= *{id})}" class="btn btn-primary">Edit</a></td>
                     <td>

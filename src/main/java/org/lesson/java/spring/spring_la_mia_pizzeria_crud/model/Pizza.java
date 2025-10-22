@@ -1,11 +1,13 @@
 package org.lesson.java.spring.spring_la_mia_pizzeria_crud.model;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
@@ -21,6 +23,11 @@ public class Pizza {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;    
+
+    @OneToMany(mappedBy = "pizza")
+    private List <Offer> offers;
+
+   
 
     @NotBlank(message = "The name can't be null, empty or blank")
     @Size(min=1 ,max=50 , message = "The name size must be longer than 1 and shorter than 50")
@@ -42,6 +49,14 @@ public class Pizza {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+     public List<Offer> getOffers() {
+        return this.offers;
+    }
+
+    public void setOffers(List<Offer> offers) {
+        this.offers = offers;
     }
 
     public String getName() {
