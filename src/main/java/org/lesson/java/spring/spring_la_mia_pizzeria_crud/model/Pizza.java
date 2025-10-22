@@ -3,6 +3,7 @@ package org.lesson.java.spring.spring_la_mia_pizzeria_crud.model;
 import java.math.BigDecimal;
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,7 +25,7 @@ public class Pizza {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;    
 
-    @OneToMany(mappedBy = "pizza")
+    @OneToMany(mappedBy = "pizza" , cascade = {CascadeType.REMOVE})
     private List <Offer> offers;
 
    
