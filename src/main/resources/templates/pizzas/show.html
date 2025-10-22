@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <th:block th:replace="~{fragments/resources :: headTags}"></th:block>
+    <title>Pizza</title>
+
+</head>
+<body>
+
+    <header>
+        <th:block th:replace="~{fragments/fragment :: navbar}"></th:block>
+    </header>
+
+    <main>
+        <div class="container">
+
+                <h1>Dettagli pizzetta</h1>
+            <div class="row">
+                <div class="col-12" th:object="${pizza}">
+                    <p th:text="*{name}"></p>
+                    <p th:text="*{description}"></p>
+                    <p th:text="*{url}"></p>
+                    <p th:text="Price"> <strong th:text="*{price}"></strong></p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <th:block th:replace="~{fragments/resources :: scripts}"></th:block>
+</body>
+</html>
