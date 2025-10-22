@@ -10,6 +10,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "offers")
@@ -25,11 +26,11 @@ public class Offer {
 
     
     
-    @NotBlank()
+    @NotNull(message = "starting date cannot be null")
     private LocalDate startingDate;
-    @NotBlank()
+    @NotNull(message = "ending date cannot be null")
     private LocalDate endingDate;
-    
+    @NotBlank
     private String description;
 
 

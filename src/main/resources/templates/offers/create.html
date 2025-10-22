@@ -21,6 +21,8 @@
                 <div class="col-12" >
                     <form id="offer-form" th:object="${offer}" th:action="@{/offers/create}" method="post">
 
+                        <input type="hidden" th:field="*{pizza}" id="linked-pizza">
+
                     <div class="mb-3">                        
                         <label for="offer-description" class="form-label">Name</label>
                         <input type="text" class="form-control" id="offer-description"  th:field="*{description}" th:errorClass="is-invalid">
