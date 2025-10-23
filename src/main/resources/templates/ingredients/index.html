@@ -70,9 +70,9 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <form th:action="@{/ingredient/delete/{id}(id=*{id})}" method="post">
+                                        <form th:action="@{/ingredients/delete/{id}(id=*{id})}" method="post">
                                             <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form> 
+                                        </form>  
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
             </table>
             </div>
 
-            <div class="col-12" th:unless="${pizzas.size() > 0}" th:text="Non ci sono pizze disponibili al momento..."></div>
+            
 
           
 

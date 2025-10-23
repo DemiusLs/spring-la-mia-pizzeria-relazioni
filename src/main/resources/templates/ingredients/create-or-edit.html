@@ -24,11 +24,11 @@
                         <input type="hidden" th:field="*{pizzas}" id="linked-pizzas">
 
                     <div class="mb-3">                        
-                        <label for="offer-description" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="offer-description"  th:field="*{description}" th:errorClass="is-invalid">
-                        <div class="invalid-feedback" th:if="${#fields.hasErrors('description')}">
+                        <label for="ingredient-name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="ingredient-name"  th:field="*{name}" th:errorClass="is-invalid">
+                        <div class="invalid-feedback" th:if="${#fields.hasErrors('name')}">
                             <ul>
-                            <li th:each="err : ${#fields.errors('description')}" th:text="${err}"></li>
+                            <li th:each="err : ${#fields.errors('name')}" th:text="${err}"></li>
                         </ul>
                         </div>                        
                     </div>       

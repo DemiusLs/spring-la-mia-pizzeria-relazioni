@@ -102,6 +102,14 @@ public class Pizza {
         this.price = price;
     }
 
+
+    public List<Ingredient> getIngredients() {
+        return this.ingredients;
+    }
+
+    public void setIngredients(List<Ingredient> ingredients) {
+        this.ingredients = ingredients;
+    }
     
 
     @Override

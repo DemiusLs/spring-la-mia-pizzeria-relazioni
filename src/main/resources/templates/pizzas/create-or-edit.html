@@ -16,10 +16,10 @@
        
         <div class="container">
 
-                <h1>Create new pizza</h1>
+                <h1 th:text="${edit} ? |Editing pizza ${pizza.name}| : |Create new pizza|"></h1>
             <div class="row">
                 <div class="col-12" >
-                    <form id="pizza-form" th:object="${pizza}" th:action="@{/pizzas/create}" method="post">
+                    <form id="pizza-form" th:object="${pizza}" th:action="${edit} ? @{/pizzas/edit/id (id= ${pizza.id})} : @{/pizzas/create}" method="post">
                     <div class="mb-3">                        
                         <label for="pizzaName" class="form-label">Name</label>
                         <input type="text" class="form-control" id="pizzaName"  th:field="*{name}" th:errorClass="is-invalid">
@@ -29,6 +29,13 @@
                         </ul>
                         </div>
                         
+                    </div>
+                    
+                    <div class="mb-3">
+                        <div class="single-ingredient form-check" th:each="ingredient : ${ingredients}">
+                            <input type="checkbox" class="form-check-input" id="|ingredient-${ingredient.id}|" th:field="*{ingredients}" th:value="${ingredient.id}">
+                            <label for="|ingredient-${ingredient.id}|" class="form-label" th:text="${ingredient.name}"></label>
+                        </div>
                     </div>
 
                     <div class="mb-3">                        

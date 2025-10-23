@@ -16,51 +16,14 @@
             <section>
             <h1>Dettagli pizzetta</h1>
             <div class="row">
-                <div class="col-12" th:object="${pizza}">
+                <div class="col-12" th:object="${ingredient}">
                     <p th:text="*{name}"></p>
-                    <p th:text="*{description}"></p>
-                    <p th:text="*{url}"></p>
-                    <p th:text="Price"> <strong th:text="*{price}"></strong></p>
+                    
                 </div>
             </div>
             </section>
 
-            <section class="row mb-3 offers" >
-                <div class="col-12" th:if="${pizza.offers.size() >0 }">
-                    <table class="table table-striped">
-                    <thead>
-                    <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Offer starting date</th>
-                    <th scope="col">Description</th>
-                    <th scope="col"></th>
-                    
-                    </tr>
-                    </thead>
-                    <tbody>
-
-                    <tr th:each="offer : ${pizza.offers}" th:object="${offer}">
-                    <td th:text="*{id}"></td>
-                    <td th:text="*{startingDate}"></td>
-                    <td th:text="*{endingDate}"></td>
-                    <td th:text="*{description}"></td>
-                    <td >
-                        <a th:href="@{/offers/edit/{id}(id=${offer.id})}" class="btn btn-info btn-sm">Edit</a>
-                    </td>
-                                                 
-                    
-
-                   
-                  
-                    </tbody>
-                    </table>
-                </div>
-                <div th:unless="${pizza.offers.size() >0  }">
-
-                    <p>Non ci sono offerte per questa pizza</p>
-
-                </div>
-            </section>
+           
                
         </div>
 
